@@ -1,1 +1,28 @@
-Conditional operator are : 
+1.Conditional operator are : ==, <, >, <=, >=, !=
+2.two : binary and unary.
+3.switch is a conditional statement which allows you to select between several blocks of code .
+  case is an conditional label.which is used with swith statement.
+4.Parentheses: Expressions within parentheses are evaluated first.
+  Unary Operators: Unary plus (+) and unary minus (-).
+  Multiplication, Division, and Remainder: These operations have the same level of precedence and are evaluated
+  from left to right.
+  Addition and Subtraction: Similar to multiplication and division, these operations have the same level
+  of precedence and are evaluated from left to right.
+5. if, else if, and else statements.
+6. if( condition )
+   // code
+   else
+   // code
+7. while(), do-while(), for(,,)
+8. for loop exicute of codition true, and do while loop exicute atleadt once while conidion is false.
+9. 
+public class Sam{
+public static void main(String str[]){
+int a = 1;
+while( a != 10 ){
+System.out.println(a);
+a++;
+}
+System.out.println(a);
+}
+}
