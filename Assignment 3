@@ -1,1 +1,7 @@
+Class_name obj = new Class_name();
+new keyword is used to create an object.
+Local, static, instance variable and other two types premitive and non premitive
+Local variable decleared inside the method, constructor, and  block. instance variable is decleared inside the class but outside of the any method, block and constructor.
+Memory for local variables is allocated on the stack, while memory for instance variables is allocated on the heap.
+Method overloading in Java is a feature that allows a class to have more than one method with the same name, if their argument lists are different.
 
