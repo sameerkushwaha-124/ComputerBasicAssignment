@@ -1,0 +1,34 @@
+How to check if git is available on your system?
+
+Answer: git --version
+How to initialize a new Git repository?
+
+Answer:
+sh
+Copy code
+git init project
+cd project
+How to tell git about your name and email?
+
+Answer:
+sh
+Copy code
+git config --global user.name "<your name>"
+git config --global user.email "<your email>"
+How to add a file to the staging area?
+
+Answer: git add <file>
+How to remove a file from the staging area?
+
+Answer: git reset HEAD -- <file>
+How to make a commit?
+
+Answer: git commit -m "Commit message"
+How to send your changes to a remote repository?
+
+Answer: git push
+What is the difference between clone and pull?
+
+Answer:
+The git clone command is used when you want to download an existing Git repository to your local computer.
+The git pull command is used when you want to update your local repository with changes made by another developer/team member in the remote repository.
