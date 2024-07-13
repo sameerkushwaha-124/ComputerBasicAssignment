@@ -1,0 +1,47 @@
+1. What is the default value of an array for different data types?
+Answer: The default values for an array in Java depend on the type of the elements in the array:
+byte, short, int, long: 0
+float, double: 0.0
+char: '\u0000' (the null character)
+boolean: false
+Object references: null
+2. Can you pass a negative number in the array size?
+Answer: No, you cannot pass a negative number as the array size. If you pass a negative number as the array size, you will not get a compiler error.
+Instead, you will get a NegativeArraySizeException at runtime.
+
+3. Where is the array stored in JVM memory?
+Answer: An array is an object in Java. Therefore, an array is stored in the heap memory in the JVM.
+
+4. What are the disadvantages of an array?
+Answer:
+To create an array, contiguous memory is required. 
+It is possible in the JVM that the memory is available to accommodate the array, but the available memory is not contiguous.
+The array is a static data structure. It is of fixed size, so we cannot increase or decrease the size of the array after creation.
+
+5. What is an anonymous array in Java? Give an example.
+Answer: An anonymous array is an array without any name (or reference). They are useful for scenarios where we need one-time usage of an array.
+Example:
+java
+Copy code
+// Anonymous int array
+new int[] {2, 3, 4, 5, 6, 7};
+
+// Anonymous String array
+new String[] {"Java", "Hungry"};
+
+6. What are the different ways to traverse an array in Java?
+Answer:
+Using a for loop
+Using a for-each loop
+
+7. What is the difference between length and length() method? Give examples.
+Answer:
+length: An array is an object that holds a fixed number of values of the same type.
+The length variable in an array returns the length of the array, i.e., the number of elements stored in the array. Once arrays are initialized, 
+their length cannot be changed, so the length variable can directly be used to get the length of an array. 
+The length variable is used only for an array.
+Output: Length of the array is: 7
+length(): The length() method is a method of the String class. 
+The length() method returns the length of a string object, i.e., the number of characters stored in the object.
+The String class uses this method because the length of a string can be modified using various operations on the object. 
+The String class internally uses a char[] array that it does not expose to the outside world.
