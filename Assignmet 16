@@ -1,0 +1,108 @@
+Q1: Sum of Digits Using Recursion
+Problem: Given an integer, find out the sum of its digits using recursion.
+
+Code:
+
+public class ASS_Code1 {
+    public static void main(String[] args) {
+        int n = 1234;
+        System.out.println(sumOfDigits(n));  // Output: 10
+    }
+
+    public static int sumOfDigits(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        return num % 10 + sumOfDigits(num / 10);
+    }
+}
+Q2: Sum of Natural Numbers with Alternate Signs
+Problem: Given a number n, find the sum of natural numbers up to n with alternate signs.
+
+Code:
+
+
+public class ASS_Code2 {
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println(alternateSum(n, 1));  // Output: 3
+    }
+
+    public static int alternateSum(int n, int sign) {
+        if (n == 0) {
+            return 0;
+        }
+        return sign * n + alternateSum(n - 1, -sign);
+    }
+}
+Q3: Max Value in an Array Using Recursion
+Problem: Print the maximum value of the array [13, 1, -3, 22, 5].
+
+
+public class ASS_Code3 {
+    public static void main(String[] args) {
+        int[] arr = {13, 1, -3, 22, 5};
+        System.out.println(maxValue(arr, arr.length - 1));  // Output: 22
+    }
+
+    public static int maxValue(int[] arr, int index) {
+        if (index == 0) {
+            return arr[0];
+        }
+        return Math.max(arr[index], maxValue(arr, index - 1));
+    }
+}
+Q4: Sum of Array Values Using Recursion
+Problem: Find the sum of the values of the array [92, 23, 15, -20, 10].
+
+Code:
+
+
+public class ASS_Code4 {
+    public static void main(String[] args) {
+        int[] arr = {92, 23, 15, -20, 10};
+        System.out.println(totalSum(arr, arr.length - 1));  // Output: 120
+    }
+
+    public static int totalSum(int[] arr, int index) {
+        if (index < 0) {
+            return 0;
+        }
+        return arr[index] + totalSum(arr, index - 1);
+    }
+}
+Q5: Armstrong Number
+Problem: Given a number n, print if it is an Armstrong number or not.
+
+Code:
+
+
+public class ASS_Code5 {
+    public static void main(String[] args) {
+        int n = 153;
+        System.out.println(isArmstrong(n) ? "Yes" : "No");  // Output: Yes
+    }
+
+    public static boolean isArmstrong(int num) {
+        int original = num;
+        int sum = 0;
+        int digits = countDigits(num);
+        
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, digits);
+            num /= 10;
+        }
+        
+        return sum == original;
+    }
+
+    private static int countDigits(int num) {
+        int count = 0;
+        while (num > 0) {
+            num /= 10;
+            count++;
+        }
+        return count;
+    }
+}
