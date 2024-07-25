@@ -1,0 +1,149 @@
+1. What is @inheritance in Java?
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class (child or subclass) to inherit fields and methods from another class
+(parent or superclass). This promotes code reuse and establishes a hierarchical relationship between classes. In Java, inheritance is implemented using the extends
+keyword. For example:
+
+2. What is superclass and subclass?
+Superclass: The class whose properties and methods are inherited by another class. It is also known as the parent class or base class.
+Subclass: The class that inherits the properties and methods of another class. It is also known as the child class or derived class.
+
+3. How is inheritance implemented/achieved in Java?
+Inheritance in Java is achieved using the extends keyword. A subclass extends a superclass, thereby inheriting its fields and methods.
+
+
+public class Test {
+    public static void main(String args[]) {
+        Child c = new Child();
+        c.display(); // inherited method
+        c.show(); // own method
+    }
+}
+
+4. What is polymorphism?
+Polymorphism in Java is the ability of a single interface to represent different underlying forms (data types). It allows one interface to be used for a general 
+class of actions. The most common use of polymorphism is when a parent class reference is used to refer to a child class object.
+Polymorphism is achieved in Java through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
+
+5. Differentiate between method overriding and overloading.
+Method Overriding: When a subclass provides a specific implementation of a method that is already defined in its superclass. It is a run-time polymorphism.
+
+class Parent {
+    void display() {
+        System.out.println("Parent class method.");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Child class method.");
+    }
+}
+Method Overloading: When multiple methods in the same class have the same name but different parameters. It is a compile-time polymorphism.
+
+class Example {
+    void display(int a) {
+        System.out.println("Method with integer argument.");
+    }
+
+    void display(String a) {
+        System.out.println("Method with string argument.");
+    }
+}
+6. What is an abstraction explained with an example?
+Abstraction is a concept in OOP that hides the complex implementation details and shows only the essential features of the object. 
+It can be achieved using abstract classes and interfaces.
+
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle.");
+    }
+}
+
+class TestAbstraction {
+    public static void main(String args[]) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+7. What is the difference between an abstract method and a final method in Java? Explain with an example.
+Abstract Method: A method that is declared without an implementation. It must be implemented by subclasses. It is declared using the abstract keyword.
+
+abstract class Animal {
+    abstract void sound();
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+Final Method: A method that cannot be overridden by subclasses. It is declared using the final keyword.
+
+class Parent {
+    final void show() {
+        System.out.println("Final method in parent class.");
+    }
+}
+
+class Child extends Parent {
+    // This will cause a compile-time error
+    // void show() {
+    //     System.out.println("Attempting to override final method.");
+    // }
+}
+8. What is the final class in Java?
+A final class is a class that cannot be subclassed. It is declared using the final keyword.
+
+java
+Copy code
+final class FinalClass {
+    // class body
+}
+
+// This will cause a compile-time error
+// class SubClass extends FinalClass {
+// }
+9. Differentiate between abstraction and encapsulation.
+Abstraction: Hides implementation details and shows only the functionality to the user. It is achieved through abstract classes and interfaces.
+
+Encapsulation: Encapsulates data (variables) and code (methods) together as a single unit. It restricts direct access to some of an object's components, which is achieved through access modifiers.
+
+10. Difference between runtime and compile-time polymorphism explained with an example.
+Compile-time Polymorphism (Method Overloading): The method to be executed is determined at compile-time.
+
+class Display {
+    void show(int a) {
+        System.out.println("Integer argument.");
+    }
+
+    void show(String a) {
+        System.out.println("String argument.");
+    }
+}
+Runtime Polymorphism (Method Overriding): The method to be executed is determined at runtime.
+
+class Parent {
+    void display() {
+        System.out.println("Parent class method.");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Child class method.");
+    }
+}
+
+public class Test {
+    public static void main(String args[]) {
+        Parent p = new Child();
+        p.display(); // Runtime polymorphism
+    }
+}
