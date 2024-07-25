@@ -1,0 +1,367 @@
+Question 1: Sort an Array in Descending Order Using Bubble Sort
+Bubble Sort Code:
+
+public class BubbleSortDescending {
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 1, 6, 0};
+        bubbleSortDescending(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void bubbleSortDescending(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    // swap arr[j] and arr[j+1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+Question 2: Sort an Array in Descending Order Using Selection Sort
+Selection Sort Code:
+
+public class SelectionSortDescending {
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 1, 6, 0};
+        selectionSortDescending(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void selectionSortDescending(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int maxIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] > arr[maxIdx]) {
+                    maxIdx = j;
+                }
+            }
+            // Swap arr[i] and arr[maxIdx]
+            int temp = arr[maxIdx];
+            arr[maxIdx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+Question 3: Sort an Array in Descending Order Using Insertion Sort
+Insertion Sort Code:
+java
+Copy code
+public class InsertionSortDescending {
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 1, 6, 0};
+        insertionSortDescending(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void insertionSortDescending(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            // Move elements of arr[0..i-1] that are less than key
+            // to one position ahead of their current position
+            while (j >= 0 && arr[j] < key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+}
+Question 4: Number of Passes Required to Sort the Array Using Bubble Sort
+For the input array {3, 5, 1, 6, 0}, we perform Bubble Sort in descending order. Each pass will push the next largest element to its correct position.
+
+Pass 1: {6, 5, 3, 1, 0}
+Pass 2: {6, 5, 3, 1, 0}
+Pass 3: {6, 5, 3, 1, 0}
+Pass 4: {6, 5, 3, 1, 0}
+Number of passes required: 4
+
+Question 5: Number of Iterations to Sort the Array Using Selection Sort
+For the input array {3, 5, 1, 6, 0}, we perform Selection Sort in descending order. Each iteration selects the largest unsorted element and places it in its correct position.
+
+Iteration 1: {6, 5, 1, 3, 0}
+Iteration 2: {6, 5, 1, 3, 0}
+Iteration 3: {6, 5, 3, 1, 0}
+Iteration 4: {6, 5, 3, 1, 0}
+Number of iterations required: 4
+..................................................................................
+
+Problem 1: Given a Number, Print Its Binary Representation
+Solution:
+
+public class BinaryRepresentation {
+    public static void main(String[] args) {
+        int number1 = 5;
+        int number2 = 10;
+
+        System.out.println("Binary representation of " + number1 + ": " + Integer.toBinaryString(number1));
+        System.out.println("Binary representation of " + number2 + ": " + Integer.toBinaryString(number2));
+    }
+}
+Problem 2: Predict Whether a Number is a Power of Two
+Solution:
+
+public class PowerOfTwo {
+    public static void main(String[] args) {
+        int n1 = 15;
+        int n2 = 32;
+
+        System.out.println(n1 + " is a power of two: " + isPowerOfTwo(n1));
+        System.out.println(n2 + " is a power of two: " + isPowerOfTwo(n2));
+    }
+
+    public static boolean isPowerOfTwo(int n) {
+        return (n > 0) && ((n & (n - 1)) == 0);
+    }
+}
+Problem 3: Using Bit Manipulation, Check Whether a Number is Odd or Even
+Solution:
+
+public class OddOrEven {
+    public static void main(String[] args) {
+        int num1 = 8;
+        int num2 = 3;
+
+        System.out.println(num1 + " is even: " + isEven(num1));
+        System.out.println(num2 + " is even: " + isEven(num2));
+    }
+
+    public static boolean isEven(int n) {
+        return (n & 1) == 0;
+    }
+}
+Problem 4: Count the Number of Set Bits in a Number
+Solution:
+
+public class CountSetBits {
+    public static void main(String[] args) {
+        int number1 = 8;
+        int number2 = 15;
+
+        System.out.println("Number of set bits in " + number1 + ": " + countSetBits(number1));
+        System.out.println("Number of set bits in " + number2 + ": " + countSetBits(number2));
+    }
+
+    public static int countSetBits(int n) {
+        int count = 0;
+        while (n > 0) {
+            count += (n & 1);
+            n >>= 1;
+        }
+        return count;
+    }
+}
+Problem 5: Find the Odd Occurring Element in an Array
+Solution:
+
+public class FindOddOccurrence {
+    public static void main(String[] args) {
+        int[] arr = {4, 3, 6, 2, 6, 4, 2, 3, 4, 3, 3};
+
+        System.out.println("The odd occurring element is: " + findOddOccurrence(arr));
+    }
+
+    public static int findOddOccurrence(int[] arr) {
+        int result = 0;
+        for (int num : arr) {
+            result ^= num;
+        }
+        return result;
+    }
+}
+....................................................................................................
+Q1: Linear Search in an Array
+Given an array, find the number 
+𝑋
+X in the array. If the element is present, return the index of the element, else print “Element not found in array”.
+
+Solution:
+
+import java.util.Scanner;
+
+public class LinearSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        System.out.print("Enter the element to search: ");
+        int x = scanner.nextInt();
+
+        int index = linearSearch(arr, x);
+        if (index != -1) {
+            System.out.println("Element found at index: " + index);
+        } else {
+            System.out.println("Element not found in array");
+        }
+    }
+
+    public static int linearSearch(int[] arr, int x) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+Q2: Last Occurrence of Target in an Array
+Given an array and an integer “target”, return the last occurrence of “target” in the array. If the target is not present return -1.
+
+Solution:
+
+public class LastOccurrence {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 1, 1, 2, 3, 4, 4, 5, 6, 6, 6, 6};
+        int target1 = 4;
+        System.out.println("Last occurrence of " + target1 + ": " + lastOccurrence(arr1, target1));
+
+        int[] arr2 = {2, 2, 2, 6, 6, 18, 29, 30, 30, 30};
+        int target2 = 15;
+        System.out.println("Last occurrence of " + target2 + ": " + lastOccurrence(arr2, target2));
+    }
+
+    public static int lastOccurrence(int[] arr, int target) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+Q3: Count Total Number of 1’s in a Sorted Binary Array
+Given a sorted binary array, efficiently count the total number of 1’s in it.
+
+Solution:
+
+public class CountOnes {
+    public static void main(String[] args) {
+        int[] arr1 = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1};
+        System.out.println("Total number of 1's: " + countOnes(arr1));
+
+        int[] arr2 = {0, 0, 0, 0, 0, 1, 1};
+        System.out.println("Total number of 1's: " + countOnes(arr2));
+    }
+
+    public static int countOnes(int[] arr) {
+        int firstOneIndex = -1;
+        int left = 0, right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == 1) {
+                firstOneIndex = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return firstOneIndex == -1 ? 0 : arr.length - firstOneIndex;
+    }
+}
+Q4: Count Occurrences of a Given Number in a Sorted Array
+Given a sorted integer array containing duplicates, count occurrences of a given number.
+
+Solution:
+
+public class CountOccurrences {
+    public static void main(String[] args) {
+        int[] nums = {2, 5, 5, 5, 6, 6, 8, 9, 9, 9};
+        int target1 = 5;
+        int target2 = 6;
+
+        System.out.println("Target " + target1 + " occurs " + countOccurrences(nums, target1) + " times");
+        System.out.println("Target " + target2 + " occurs " + countOccurrences(nums, target2) + " times");
+    }
+
+    public static int countOccurrences(int[] nums, int target) {
+        int firstIndex = findFirstIndex(nums, target);
+        if (firstIndex == -1) {
+            return 0;
+        }
+        int lastIndex = findLastIndex(nums, target);
+        return lastIndex - firstIndex + 1;
+    }
+
+    public static int findFirstIndex(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target && (mid == 0 || nums[mid - 1] < target)) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int findLastIndex(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target && (mid == nums.length - 1 || nums[mid + 1] > target)) {
+                return mid;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+Q5: Check if a Number is a Perfect Square
+Given a positive integer num, return true if num is a perfect square or false otherwise.
+
+Solution:
+
+public class PerfectSquare {
+    public static void main(String[] args) {
+        int num1 = 16;
+        int num2 = 14;
+
+        System.out.println(num1 + " is a perfect square: " + isPerfectSquare(num1));
+        System.out.println(num2 + " is a perfect square: " + isPerfectSquare(num2));
+    }
+
+    public static boolean isPerfectSquare(int num) {
+        if (num < 1) return false;
+        int left = 1, right = num;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            long square = (long) mid * mid;
+            if (square == num) {
+                return true;
+            } else if (square < num) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return false;
+    }
+}
